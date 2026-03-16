@@ -20,7 +20,7 @@ opencode
 ```
 
 ### TDD Guide
-**Location:** `agents/custom-agent/tdd-guide.md`  
+**Location:** `agents/custom-agent/tdd-guide.md` (also in `.opencode/agents/`)  
 **Purpose:** Test-driven development guidance  
 **Tools:** read, edit, write, glob, grep  
 **Mode:** Subagent
@@ -34,6 +34,23 @@ opencode run --agent tdd-guide "Help me write tests for X"
 opencode
 > /agent tdd-guide
 > Describe the feature
+```
+
+### Ubuntu Manager
+**Location:** `.opencode/agents/ubuntu-manager.md`  
+**Purpose:** Ubuntu system management (packages, config, files)  
+**Tools:** read, edit, write, glob, grep, bash, webfetch  
+**Mode:** All-purpose
+
+**Usage:**
+```bash
+# CLI
+opencode run --agent ubuntu-manager "How do I install Node.js on Ubuntu?"
+
+# Interactive
+opencode
+> /agent ubuntu-manager
+> How do I update my system?
 ```
 
 ## Custom Commands
@@ -56,6 +73,25 @@ Starts test-driven development with the tdd-guide agent.
 opencode
 > /tdd
 > Describe your feature
+```
+
+### `/install`
+Install packages on Ubuntu using the ubuntu-manager agent.
+
+**Usage:**
+```bash
+opencode
+> /install
+> nodejs
+```
+
+### `/update-system`
+Update the Ubuntu system using the ubuntu-manager agent.
+
+**Usage:**
+```bash
+opencode
+> /update-system
 ```
 
 ## Workflow Examples
@@ -115,6 +151,12 @@ opencode run "Write documentation for this function using documentation-skill"
 
 ```
 .
+├── .opencode/
+│   ├── agents/
+│   │   ├── code-reviewer.md
+│   │   ├── tdd-guide.md
+│   │   └── ubuntu-manager.md
+│   └── config.json
 ├── agents/
 │   ├── custom-agent/
 │   │   ├── code-reviewer.md
@@ -127,6 +169,8 @@ opencode run "Write documentation for this function using documentation-skill"
 │   │   └── SKILL.md
 │   └── documentation-skill/
 │       └── SKILL.md
+├── tools/
+│   └── machine-manager.sh
 ├── workflows/
 │   └── code-review-workflow.md
 └── config/
