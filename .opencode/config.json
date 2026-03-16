@@ -2,26 +2,43 @@
   "$schema": "https://opencode.ai/config.json",
   "agents": {
     "code-reviewer": {
-      "path": "./agents/custom-agent/code-reviewer.md",
+      "path": "/home/harun/Desktop/Assistant/agents/custom-agent/code-reviewer.md",
       "description": "Senior code reviewer for security and performance"
     },
     "tdd-guide": {
-      "path": "./agents/custom-agent/tdd-guide.md",
+      "path": "/home/harun/Desktop/Assistant/agents/custom-agent/tdd-guide.md",
       "description": "TDD expert for test-first development"
+    },
+    "ubuntu-manager": {
+      "path": "/home/harun/Desktop/Assistant/.opencode/agents/ubuntu-manager.md",
+      "description": "Ubuntu system management specialist"
     }
   },
   "commands": {
     "review": {
       "template": "Review this code for security issues, performance problems, and best practices:\n\n{{code}}",
       "description": "Run comprehensive code review",
-      "agent": "code-reviewer",
-      "model": "anthropic/claude-3-5-sonnet-20241022"
+      "agent": "code-reviewer"
     },
     "tdd": {
       "template": "Help me write tests first for this feature:\n\n{{description}}",
       "description": "Start test-driven development",
-      "agent": "tdd-guide",
-      "model": "anthropic/claude-3-5-sonnet-20241022"
+      "agent": "tdd-guide"
+    },
+    "install": {
+      "template": "Install {{package}} on Ubuntu using apt. Check for dependencies and provide the exact commands.",
+      "description": "Install packages on Ubuntu",
+      "agent": "ubuntu-manager"
+    },
+    "update-system": {
+      "template": "Update the Ubuntu system including all packages and security updates.",
+      "description": "Update Ubuntu system",
+      "agent": "ubuntu-manager"
+    },
+    "clean-system": {
+      "template": "Clean up the Ubuntu system by removing unused packages and old kernels.",
+      "description": "Clean Ubuntu system",
+      "agent": "ubuntu-manager"
     }
   }
 }
