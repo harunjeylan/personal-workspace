@@ -82,6 +82,35 @@ The agents are configured in `config/opencode.json`. To use them globally:
 1. Copy `config/opencode.json` to `~/.config/opencode/config.json`
 2. Or use per-project configuration in `.opencode/config.json`
 
+## Available Skills
+
+### Code Review Skill
+**Location:** `skills/code-review-skill/SKILL.md`  
+**Purpose:** Comprehensive code reviews with security, performance, and best practices focus.
+
+**Usage:**
+```bash
+opencode run "Review this code for security issues using code-review-skill"
+```
+
+### Commit Message Skill
+**Location:** `skills/commit-message-skill/SKILL.md`  
+**Purpose:** Generate conventional commit messages based on code changes.
+
+**Usage:**
+```bash
+opencode run "Generate a commit message for these changes using commit-message-skill"
+```
+
+### Documentation Skill
+**Location:** `skills/documentation-skill/SKILL.md`  
+**Purpose:** Generate and maintain documentation for code and projects.
+
+**Usage:**
+```bash
+opencode run "Write documentation for this function using documentation-skill"
+```
+
 ## Files Structure
 
 ```
@@ -92,7 +121,11 @@ The agents are configured in `config/opencode.json`. To use them globally:
 │   │   └── tdd-guide.md
 │   └── README.md
 ├── skills/
-│   └── code-review-skill/
+│   ├── code-review-skill/
+│   │   └── SKILL.md
+│   ├── commit-message-skill/
+│   │   └── SKILL.md
+│   └── documentation-skill/
 │       └── SKILL.md
 ├── workflows/
 │   └── code-review-workflow.md
