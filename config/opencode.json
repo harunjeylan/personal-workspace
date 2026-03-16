@@ -1,0 +1,27 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agents": {
+    "code-reviewer": {
+      "path": "./agents/custom-agent/code-reviewer.md",
+      "description": "Senior code reviewer for security and performance"
+    },
+    "tdd-guide": {
+      "path": "./agents/custom-agent/tdd-guide.md",
+      "description": "TDD expert for test-first development"
+    }
+  },
+  "commands": {
+    "review": {
+      "template": "Review this code for security issues, performance problems, and best practices:\n\n{{code}}",
+      "description": "Run comprehensive code review",
+      "agent": "code-reviewer",
+      "model": "anthropic/claude-3-5-sonnet-20241022"
+    },
+    "tdd": {
+      "template": "Help me write tests first for this feature:\n\n{{description}}",
+      "description": "Start test-driven development",
+      "agent": "tdd-guide",
+      "model": "anthropic/claude-3-5-sonnet-20241022"
+    }
+  }
+}
